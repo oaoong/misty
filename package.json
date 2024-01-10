@@ -1,0 +1,22 @@
+{
+  "name": "@oaoong/misty",
+  "version": "0.0.1",
+  "description": "make component misty",
+  "repository": "https://github.com/oaoong/misty.git",
+  "author": "oaoong <pizzachicken@kakao.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.47",
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
