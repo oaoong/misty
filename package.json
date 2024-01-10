@@ -3,14 +3,31 @@
   "version": "0.0.1",
   "description": "make component misty",
   "repository": "https://github.com/oaoong/misty.git",
+  "keywords": [
+    "react",
+    "component",
+    "blur",
+    "misty",
+    "UI"
+  ],
   "author": "oaoong <pizzachicken@kakao.com>",
   "license": "MIT",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.2.47",
     "react": "^18.2.0",
+    "rollup": "^4.9.4",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   },
   "main": "dist/cjs/index.js",
@@ -18,5 +35,9 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/oaoong"
+  }
 }
