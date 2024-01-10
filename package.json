@@ -3,6 +3,13 @@
   "version": "0.0.1",
   "description": "make component misty",
   "repository": "https://github.com/oaoong/misty.git",
+  "keywords": [
+    "react",
+    "component",
+    "blur",
+    "misty",
+    "UI"
+  ],
   "author": "oaoong <pizzachicken@kakao.com>",
   "license": "MIT",
   "scripts": {
@@ -28,5 +35,9 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/oaoong"
+  }
 }
