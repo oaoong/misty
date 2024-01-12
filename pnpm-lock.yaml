@@ -77,9 +77,6 @@ devDependencies:
   rollup-plugin-postcss:
     specifier: ^4.0.2
     version: 4.0.2(postcss@8.4.33)
-  rollup-plugin-scss:
-    specifier: ^4.0.0
-    version: 4.0.0
   sass:
     specifier: ^1.69.7
     version: 1.69.7
@@ -8388,12 +8385,6 @@ packages:
       style-inject: 0.3.0
     transitivePeerDependencies:
       - ts-node
-    dev: true
-
-  /rollup-plugin-scss@4.0.0:
-    resolution: {integrity: sha512-wxasNXDYC2m+fDxCMgK00WebVWYmeFvShyNABmjvSJZ6D1/SepwqFeaMFMQromveI79gfvb64yJjiZZxSZxEIA==}
-    dependencies:
-      rollup-pluginutils: 2.8.2
     dev: true
 
   /rollup-pluginutils@2.8.2:
