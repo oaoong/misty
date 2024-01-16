@@ -1,0 +1,57 @@
+name: Pull request
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  docker:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+          cache-dependency-path: ./pnpm-lock.yaml
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      # 빌드를 수행합니다.
+      - name: Build
+        run: pnpm build
+
+      # 테스트를 수행합니다.
+      - name: Run tests
+        run: pnpm test
+
+      - name: if_fail
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.TOKEN_ACTIONS }}
+          script: |
+            const ref = "${{github.ref}}"
+            const pull_number = Number(ref.split("/")[2])
+            console.log(pull_number, ref.split("/"), github.ref)
+            await github.pulls.createReview({
+              ...context.repo,
+              pull_number,
+              body : "actions 결과를 다시 확인해주세요. -자동으로 작성됨-",
+              event : "REQUEST_CHANGES"
+            })
+        if: failure()
