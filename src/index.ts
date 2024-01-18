@@ -1,3 +1,3 @@
-import { Container } from "./components";
+import { Container } from './components'
 
-export { Container };
+export { Container }
