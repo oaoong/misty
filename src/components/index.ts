@@ -1,3 +1,3 @@
-import { default as Container } from "./Container";
+import { default as Container } from './Container'
 
-export { Container };
+export { Container }
