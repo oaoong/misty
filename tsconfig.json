@@ -8,7 +8,7 @@
     "skipLibCheck": true,
 
     // Added
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "ESNext",
     "declaration": true,
     "declarationDir": "types",
@@ -18,11 +18,5 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
   },
-  "exclude": [
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.tsx",
-    "**/*.stories.ts",
-    "src/stories/**/*"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
