@@ -7,9 +7,10 @@ import './misty.scss'
 
 export interface Props {
   children?: ReactNode
+  Contents?: ReactNode
 }
 
-const Misty = ({ children }: Props) => {
+const Misty = ({ children, Contents }: Props) => {
   const openController = useOpenState()
 
   const contextValue = useMemo(
@@ -21,7 +22,10 @@ const Misty = ({ children }: Props) => {
 
   return (
     <MistyContext.Provider value={contextValue}>
-      <div className={`misty-body ${contextValue.isOpen ? 'open' : 'close'}`}>{children}</div>
+      <div className={`misty-container ${contextValue.isOpen ? 'open' : 'close'}`}>
+        <div className={`misty-body ${contextValue.isOpen ? 'open' : 'close'}`}>{children}</div>
+        <div className={`misty-origin ${contextValue.isOpen ? 'close' : 'open'}`}>{Contents}</div>
+      </div>
     </MistyContext.Provider>
   )
 }

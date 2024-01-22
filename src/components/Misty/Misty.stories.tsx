@@ -14,10 +14,32 @@ type Story = StoryObj<typeof meta>
 export const Normal: Story = {
   args: {},
   render: () => (
-    <Misty>
-      <MistyClose />
-      <div>'hi'</div>
-    </Misty>
+    <>
+      <Misty
+        Contents={
+          <div>
+            <div>'hi'</div>
+            <div>'hi'</div>
+            <div>'hi'</div>
+          </div>
+        }
+      >
+        <MistyClose />
+      </Misty>
+      <Misty
+        Contents={
+          <div>
+            <div>'hi'</div>
+            <div>'hi'</div>
+            <div>'hi'</div>
+            <div>'hi'</div>
+            <div>'hi'</div>
+          </div>
+        }
+      >
+        <MistyClose />
+      </Misty>
+    </>
   ),
 }
 
