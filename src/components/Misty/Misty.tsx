@@ -6,14 +6,15 @@ import { useMistyContext } from '../../hooks'
 import './misty.scss'
 
 export interface Props {
-  children?: ReactNode
-  Contents?: ReactNode
   width: string
   height: string
+  isOpen?: boolean
+  children?: ReactNode
+  Contents?: ReactNode
 }
 
-const Misty = ({ children, Contents, width, height }: Props) => {
-  const openController = useOpenState()
+const Misty = ({ children, Contents, width, height, isOpen }: Props) => {
+  const openController = useOpenState({ preemptiveOpen: isOpen })
 
   const containerStyle = {
     width: width,
@@ -50,4 +51,9 @@ const MistyClose = () => {
 }
 Misty.CloseButton = MistyClose
 
-export { Misty, MistyClose }
+const useCloseMisty = () => {
+  const { close } = useMistyContext()
+  return close
+}
+
+export { Misty, MistyClose, useCloseMisty as close }

@@ -1,7 +1,11 @@
 import { useState } from 'react'
 
-function useOpenState() {
-  const [isOpen, setIsOpen] = useState(true)
+interface Props {
+  preemptiveOpen?: boolean
+}
+
+function useOpenState({ preemptiveOpen = true }: Props) {
+  const [isOpen, setIsOpen] = useState(preemptiveOpen)
 
   const close = () => {
     setIsOpen(() => false)
