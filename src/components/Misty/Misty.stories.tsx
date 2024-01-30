@@ -12,10 +12,12 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Normal: Story = {
-  args: {},
+  args: { width: '300px', height: '200px' },
   render: () => (
     <>
       <Misty
+        width="300px"
+        height="200px"
         Contents={
           <div>
             <div>'hi'</div>
@@ -27,6 +29,8 @@ export const Normal: Story = {
         <MistyClose />
       </Misty>
       <Misty
+        width="400px"
+        height="100px"
         Contents={
           <div>
             <div>'hi'</div>
@@ -41,8 +45,4 @@ export const Normal: Story = {
       </Misty>
     </>
   ),
-}
-
-export const Disabled: Story = {
-  args: {},
 }
