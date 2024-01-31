@@ -1,8 +1,6 @@
-import { ReactNode, useMemo } from 'react'
+import { CSSProperties, ReactNode, useMemo, useState } from 'react'
 import { MistyContext } from '../../contexts'
-import useOpenState from '../../hooks/useOpenState'
-import { useMistyContext } from '../../hooks'
-
+import useMistyProcess from '../../hooks/useMistyProcess'
 import './misty.scss'
 
 export interface Props {
@@ -13,8 +11,8 @@ export interface Props {
   Contents?: ReactNode
 }
 
-const Misty = ({ children, Contents, width, height, isOpen }: Props) => {
-  const openController = useOpenState({ preemptiveOpen: isOpen })
+const Misty = ({ children, Contents, width, height, isOpen: initialOpen = true }: Props) => {
+  const [isOpen, setIsOpen] = useState(initialOpen)
 
   const containerStyle = {
     width: width,
@@ -23,9 +21,10 @@ const Misty = ({ children, Contents, width, height, isOpen }: Props) => {
 
   const contextValue = useMemo(
     () => ({
-      ...openController,
+      isOpen,
+      setIsOpen,
     }),
-    [openController]
+    [isOpen]
   )
 
   return (
@@ -41,19 +40,23 @@ const Misty = ({ children, Contents, width, height, isOpen }: Props) => {
   )
 }
 
-const MistyClose = () => {
-  const { close } = useMistyContext()
+const MistyClose = ({ style }: { style?: CSSProperties }) => {
+  const { close } = useMistyProcess()
   return (
-    <button type="button" onClick={close} className="misty-close_button">
+    <button type="button" onClick={close} className="misty-close_button" style={style}>
       X
     </button>
   )
 }
 Misty.CloseButton = MistyClose
 
-const useCloseMisty = () => {
-  const { close } = useMistyContext()
-  return close
+const MistyDescription = ({ children, style }: { children?: ReactNode; style?: CSSProperties }) => {
+  return (
+    <div className="misty-description" style={style}>
+      {children}
+    </div>
+  )
 }
+Misty.MistyDescription = MistyDescription
 
-export { Misty, MistyClose, useCloseMisty as close }
+export { Misty, MistyClose, MistyDescription }

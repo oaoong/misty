@@ -1,10 +1,8 @@
-import { createContext } from 'react'
+import React, { createContext } from 'react'
 
 const initialState = {
-  isOpen: false,
-  open: () => {},
-  close: () => {},
-  toggle: () => {},
+  isOpen: true as boolean,
+  setIsOpen: (() => {}) as React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 export const MistyContext = createContext<typeof initialState | undefined>(initialState)
