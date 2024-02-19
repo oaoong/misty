@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Misty, MistyClose } from './Misty'
+import { Misty, MistyClose, MistyDescription } from './Misty'
 
 const meta = {
   title: 'UI/Misty',
@@ -42,6 +42,11 @@ export const Normal: Story = {
         }
       >
         <MistyClose />
+        <MistyDescription>
+          안녕Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem earum rem tempora perspiciatis. Explicabo
+          cum eaque nisi, delectus perspiciatis architecto quidem quae non dolorem molestias, consequatur, aliquam
+          nostrum nihil neque!
+        </MistyDescription>
       </Misty>
     </>
   ),
