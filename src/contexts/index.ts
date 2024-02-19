@@ -1,3 +1,1 @@
-import { MistyContext } from './mistyContext'
-
-export { MistyContext }
+export * from './mistyContext'
