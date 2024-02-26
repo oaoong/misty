@@ -1,4 +1,4 @@
-import type { MistyProps } from '../Misty'
+import type { MistyProps } from '@/components'
 
 interface MistyOptionalRendererProps extends Pick<MistyProps, 'preLoad' | 'isOpen' | 'children' | 'contents'> {}
 
@@ -19,4 +19,4 @@ const MistyOptionalRenderer = ({ preLoad, isOpen, children, contents }: MistyOpt
   )
 }
 
-export default MistyOptionalRenderer
+export { MistyOptionalRenderer }

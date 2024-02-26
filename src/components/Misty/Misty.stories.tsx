@@ -1,5 +1,5 @@
 import type { StoryObj } from '@storybook/react'
-import { Misty, MistyBody, MistyClose, MistyDescription } from './Misty'
+import { Misty, MistyBody, MistyClose, MistyDescription } from '@/components'
 
 const meta = {
   title: 'UI/Misty',

@@ -1,7 +1,8 @@
 import { CSSProperties, ReactNode, useMemo, useState } from 'react'
-import { MistyOptionalRenderer } from '../MistyOptionalRenderer'
-import { MistyContext } from '../../contexts'
-import useMistyProcess from '../../hooks/useMistyProcess'
+
+import { MistyOptionalRenderer } from '@/components'
+import { MistyContext } from '@/contexts'
+import { useMistyProcess } from '@/hooks'
 
 import './misty.scss'
 
