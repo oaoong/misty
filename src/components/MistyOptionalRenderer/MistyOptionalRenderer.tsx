@@ -15,7 +15,7 @@ const MistyOptionalRenderer = ({ preLoad, isOpen, children, contents }: MistyOpt
           {contents}
         </div>
         <div
-          className="misty-body"
+          className="misty-body-wrapper"
           style={{
             visibility: `${isOpen ? 'visible' : 'hidden'}`,
           }}
@@ -26,7 +26,11 @@ const MistyOptionalRenderer = ({ preLoad, isOpen, children, contents }: MistyOpt
     )
   }
 
-  return isOpen ? <div className="misty-body">{children}</div> : <div className="misty-contents">{contents}</div>
+  return isOpen ? (
+    <div className="misty-body-wrapper">{children}</div>
+  ) : (
+    <div className="misty-contents">{contents}</div>
+  )
 }
 
 export default MistyOptionalRenderer

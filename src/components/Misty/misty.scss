@@ -1,28 +1,38 @@
 .misty-container {
   z-index: 100;
-  overflow: hidden;
-  position: relative;
+  display: grid;
+}
 
-  &.close {
-    overflow: visible;
-  }
+.misty-body-wrapper,
+.misty-contents {
+  grid-column: 1;
+  grid-row: 1;
+
+  overflow: auto;
+}
+
+.misty-body-wrapper {
+  display: flex;
 }
 
 .misty-body {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.misty-contents {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5%;
 }
 
 .misty-close_button {
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
   z-index: 100;
 }
