@@ -6,32 +6,25 @@ import useMistyProcess from '../../hooks/useMistyProcess'
 import './misty.scss'
 
 interface MistyProps {
-  width: string
-  height: string
+  children: ReactNode
+  contents: ReactNode
   preLoad?: boolean
   isOpen?: boolean
-  children?: ReactNode
-  contents?: ReactNode
   style?: CSSProperties
+  width?: string
+  height?: string
 }
 
 const Misty = ({
   children,
   contents,
-  width,
-  height,
   style,
+  width = '100%',
+  height = '100%',
   preLoad = false,
   isOpen: initialOpen = true,
 }: MistyProps) => {
   const [isOpen, setIsOpen] = useState(initialOpen)
-
-  const containerStyle = {
-    width: width,
-    height: height,
-
-    ...style,
-  }
 
   const contextValue = useMemo(
     () => ({
@@ -41,9 +34,15 @@ const Misty = ({
     [isOpen]
   )
 
+  const containerStyle = {
+    width,
+    height,
+    ...style,
+  }
+
   return (
     <MistyContext.Provider value={contextValue}>
-      <div className={`misty-container ${contextValue.isOpen ? 'open' : 'close'}`} style={containerStyle}>
+      <div className={'misty-container'} style={containerStyle}>
         <MistyOptionalRenderer preLoad={preLoad} isOpen={isOpen} contents={contents}>
           {children}
         </MistyOptionalRenderer>
@@ -52,34 +51,42 @@ const Misty = ({
   )
 }
 
-const MistyClose = ({ style }: { style?: CSSProperties }) => {
-  const { close } = useMistyProcess()
+const MistyBody = ({ children, style }: { children?: ReactNode; style?: CSSProperties }) => {
   return (
-    <button type="button" onClick={close} className="misty-close_button" style={style}>
+    <div
+      className="misty-body"
+      style={{
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  )
+}
+Misty.Body = MistyBody
+
+const MistyClose = ({ style, position = 'right' }: { style?: CSSProperties; position?: 'right' | 'left' }) => {
+  const { close } = useMistyProcess()
+
+  const positionMargin = position === 'right' ? 'left' : 'right'
+  const closeButtonStyle = {
+    [`margin-${positionMargin}`]: 'auto',
+    ...style,
+  }
+
+  return (
+    <button type="button" onClick={close} className="misty-close_button" style={closeButtonStyle}>
       X
     </button>
   )
 }
 Misty.CloseButton = MistyClose
 
-const MistyDescription = ({
-  children,
-  style,
-  linearStart = '#e66465',
-  linearEnd = '#9198e5',
-}: {
-  children?: ReactNode
-  style?: CSSProperties
-  linearStart?: string
-  linearEnd?: string
-}) => {
-  const linearGradient = `linear-gradient(45deg, ${linearStart}, ${linearEnd})`
-
+const MistyDescription = ({ children, style }: { children?: ReactNode; style?: CSSProperties }) => {
   return (
     <div
       className="misty-description"
       style={{
-        background: linearGradient,
         ...style,
       }}
     >
@@ -89,5 +96,5 @@ const MistyDescription = ({
 }
 Misty.MistyDescription = MistyDescription
 
-export { Misty, MistyClose, MistyDescription }
+export { Misty, MistyBody, MistyClose, MistyDescription }
 export type { MistyProps }
