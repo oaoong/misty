@@ -110,7 +110,7 @@ export const Normal: Story = {
         </MistyBody>
       </Misty>
       <Misty
-        preLoad={false}
+        preLoad={true}
         contents={
           <div>
             <div>'hi'</div>
