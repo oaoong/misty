@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { MistyContext } from '../contexts'
+import { MistyContext } from '@/contexts'
 
 function useMistyContext() {
   const context = useContext(MistyContext)
@@ -9,4 +9,4 @@ function useMistyContext() {
   return context
 }
 
-export default useMistyContext
+export { useMistyContext }
