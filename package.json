@@ -24,7 +24,8 @@
     "test": "vitest --run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "chromatic": "bash ./scripts/chromatic_publish.sh"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18"
@@ -90,5 +91,5 @@
   },
   "readme": "ERROR: No README data found!",
   "homepage": "https://github.com/oaoong/misty#readme",
-  "_id": "@oaoong/misty@0.0.6"
+  "_id": "@oaoong/misty@0.2.3"
 }
