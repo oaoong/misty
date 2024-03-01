@@ -1,0 +1,41 @@
+name: deploy npm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-github-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://npm.pkg.github.com/
+          cache: 'npm'
+          cache-dependency-path: ./pnpm-lock.yaml
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      # 빌드를 수행합니다.
+      - name: Build
+        run: pnpm build
+
+      # 테스트를 수행합니다.
+      - name: Run tests
+        run: pnpm test
+
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.TOKEN_ACTIONS}}

@@ -1,6 +1,6 @@
 {
   "name": "@oaoong/misty",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "make component misty",
   "repository": {
     "type": "git",
@@ -20,10 +20,13 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
-    "build-clean": "rd /s/q dist 2> nul && rollup -c rollup.config.mjs",
+    "build-clean": "eslint . && rd /s/q dist 2> nul && rollup -c rollup.config.mjs",
     "test": "vitest --run",
+    "cypress": "cypress open",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint .",
+    "chromatic": "bash ./scripts/chromatic_publish.sh"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18"
@@ -43,10 +46,21 @@
     "@storybook/react-vite": "7.6.7",
     "@storybook/test": "7.6.7",
     "@testing-library/react": "^14.1.2",
+    "@types/node": "^20.11.5",
     "@types/react": "^18.2.47",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "chromatic": "^10.3.0",
     "css-loader": "^6.9.0",
+    "cypress": "^13.6.6",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "jsdom": "^23.2.0",
+    "prettier": "^3.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rollup": "^4.9.4",
@@ -58,6 +72,10 @@
     "sass-loader": "^13.3.3",
     "storybook": "7.6.7",
     "style-loader": "^3.3.4",
+    "stylelint": "^16.1.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-scss": "^6.0.0",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "vitest": "^1.1.3"
@@ -66,7 +84,6 @@
   "files": [
     "dist"
   ],
-  "type": "module",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public",
@@ -77,5 +94,5 @@
   },
   "readme": "ERROR: No README data found!",
   "homepage": "https://github.com/oaoong/misty#readme",
-  "_id": "@oaoong/misty@0.0.6"
+  "_id": "@oaoong/misty@0.2.3"
 }

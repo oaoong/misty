@@ -1,0 +1,67 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.misty-container {
+  z-index: 100;
+  display: flex;
+}
+
+.misty-body-wrapper,
+.misty-contents {
+  overflow: auto;
+}
+
+.misty-contents {
+  display: none;
+
+  &.misty-contents--open {
+    display: block;
+  }
+}
+
+.misty-body-wrapper {
+  display: none;
+
+  &.misty-body-wrapper--open {
+    animation: fadeIn 0.5s ease-out forwards;
+    display: flex;
+  }
+}
+
+.misty-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  border-radius: 5px;
+}
+
+.misty-close_button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  transition: opacity 0.3s;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 50%;
+  }
+
+  z-index: 100;
+}

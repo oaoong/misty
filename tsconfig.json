@@ -8,21 +8,20 @@
     "skipLibCheck": true,
 
     // Added
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "ESNext",
     "declaration": true,
     "declarationDir": "types",
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+
+    "baseUrl": "./src/",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
-  "exclude": [
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.tsx",
-    "**/*.stories.ts",
-    "src/stories/**/*"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
