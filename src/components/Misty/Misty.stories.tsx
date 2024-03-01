@@ -68,7 +68,7 @@ export const Normal: Story = {
         <button type="button">Contents</button>
       </div>
     ),
-    preLoad: true,
+    preLoad: false,
     isOpen: true,
     style: { backgroundColor: 'powderblue' },
   },
@@ -101,7 +101,7 @@ export const Preload: Story = {
         <button type="button">Contents</button>
       </div>
     ),
-    preLoad: false,
+    preLoad: true,
     isOpen: true,
     style: {},
     width: '500px',
