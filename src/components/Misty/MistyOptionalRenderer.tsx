@@ -6,16 +6,27 @@ const MistyOptionalRenderer = ({ preLoad, isOpen, children, contents }: MistyOpt
   if (preLoad) {
     return (
       <>
-        <div className={`misty-contents ${isOpen ? '' : 'misty-contents--open'}`}>{contents}</div>
-        <div className={`misty-body-wrapper ${isOpen ? 'misty-body-wrapper--open' : ''}`}>{children}</div>
+        <div className={`misty-contents ${isOpen ? '' : 'misty-contents--open'}`} data-cy={'misty-contents'}>
+          {contents}
+        </div>
+        <div
+          className={`misty-body-wrapper ${isOpen ? 'misty-body-wrapper--open' : ''}`}
+          data-cy={'misty-body-wrapper'}
+        >
+          {children}
+        </div>
       </>
     )
   }
 
   return isOpen ? (
-    <div className={`misty-body-wrapper ${isOpen ? 'misty-body-wrapper--open' : ''}`}>{children}</div>
+    <div className={`misty-body-wrapper ${isOpen ? 'misty-body-wrapper--open' : ''}`} data-cy={'misty-body-wrapper'}>
+      {children}
+    </div>
   ) : (
-    <div className={`misty-contents ${isOpen ? '' : 'misty-contents--open'}`}>{contents}</div>
+    <div className={`misty-contents ${isOpen ? '' : 'misty-contents--open'}`} data-cy={'misty-contents'}>
+      {contents}
+    </div>
   )
 }
 
