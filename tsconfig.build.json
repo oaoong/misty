@@ -6,7 +6,6 @@
     "**/*.stories.tsx",
     "**/*.stories.ts",
     "src/stories/**/*",
-    "./playgrounds/**/*",
     "./cypress/**/*"
   ]
 }
