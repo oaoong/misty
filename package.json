@@ -22,7 +22,7 @@
     "build": "rollup -c rollup.config.mjs",
     "build-clean": "eslint . && rd /s/q dist 2> nul && rollup -c rollup.config.mjs",
     "test": "vitest --run",
-    "cypress": "npx cypress open",
+    "cypress": "cypress open",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint .",
