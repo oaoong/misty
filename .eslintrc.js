@@ -33,6 +33,13 @@ module.exports = {
         location: 'anywhere',
       },
     ],
+    'no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
     curly: ['error', 'all'],
     eqeqeq: ['error', 'always', { null: 'ignore' }],
     '@typescript-eslint/naming-convention': [
