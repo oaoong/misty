@@ -19,6 +19,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:cypress/recommended',
     'prettier',
   ],
   plugins: ['@typescript-eslint', 'import', 'react', 'react-hooks'],
@@ -30,6 +31,13 @@ module.exports = {
       {
         terms: ['TODO', 'FIXME', 'XXX', 'BUG'],
         location: 'anywhere',
+      },
+    ],
+    'no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
       },
     ],
     curly: ['error', 'all'],

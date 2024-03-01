@@ -43,7 +43,7 @@ const Misty = ({
 
   return (
     <MistyContext.Provider value={contextValue}>
-      <div className={'misty-container'} style={containerStyle}>
+      <div className={'misty-container'} data-cy={'misty-container'} style={containerStyle}>
         <MistyOptionalRenderer preLoad={preLoad} isOpen={isOpen} contents={contents}>
           {children}
         </MistyOptionalRenderer>
@@ -55,7 +55,8 @@ const Misty = ({
 const MistyBody = ({ children, style }: { children?: ReactNode; style?: CSSProperties }) => {
   return (
     <div
-      className="misty-body"
+      className={'misty-body'}
+      data-cy={'misty-body'}
       style={{
         ...style,
       }}
@@ -76,7 +77,13 @@ const MistyClose = ({ style, position = 'right' }: { style?: CSSProperties; posi
   }
 
   return (
-    <button type="button" onClick={close} className="misty-close_button" style={closeButtonStyle}>
+    <button
+      type="button"
+      onClick={close}
+      className={'misty-close_button'}
+      data-cy={'misty-close_button'}
+      style={closeButtonStyle}
+    >
       X
     </button>
   )
@@ -86,7 +93,8 @@ Misty.CloseButton = MistyClose
 const MistyDescription = ({ children, style }: { children?: ReactNode; style?: CSSProperties }) => {
   return (
     <div
-      className="misty-description"
+      className={'misty-description'}
+      data-cy={'misty-description'}
       style={{
         ...style,
       }}

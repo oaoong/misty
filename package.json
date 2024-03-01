@@ -1,6 +1,6 @@
 {
   "name": "@oaoong/misty",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "make component misty",
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "build": "rollup -c rollup.config.mjs",
     "build-clean": "eslint . && rd /s/q dist 2> nul && rollup -c rollup.config.mjs",
     "test": "vitest --run",
+    "cypress": "cypress open",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint .",
@@ -51,8 +52,10 @@
     "@typescript-eslint/parser": "^6.19.0",
     "chromatic": "^10.3.0",
     "css-loader": "^6.9.0",
+    "cypress": "^13.6.6",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",

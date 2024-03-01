@@ -1,4 +1,4 @@
-import { useMistyContext } from '@/hooks'
+import { useMistyContext } from '@/hooks/useMistyContext'
 
 function useMistyProcess() {
   const { isOpen, setIsOpen } = useMistyContext()
