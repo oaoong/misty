@@ -2,7 +2,10 @@
   "name": "@oaoong/misty",
   "version": "1.0.1",
   "description": "make component misty",
-  "repository": "https://github.com/oaoong/misty",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oaoong/misty.git"
+  },
   "keywords": [
     "react",
     "component",
@@ -90,5 +93,5 @@
   },
   "readme": "ERROR: No README data found!",
   "homepage": "https://github.com/oaoong/misty#readme",
-  "_id": "@oaoong/misty@1.0.0"
+  "_id": "@oaoong/misty@1.0.1"
 }
