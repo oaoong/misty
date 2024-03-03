@@ -2,10 +2,7 @@
   "name": "@oaoong/misty",
   "version": "1.0.0",
   "description": "make component misty",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oaoong/misty.git"
-  },
+  "repository": "https://github.com/oaoong/misty",
   "keywords": [
     "react",
     "component",
@@ -86,8 +83,7 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/@oaoong/misty"
+    "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
     "url": "https://github.com/oaoong/misty/issues"
