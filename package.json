@@ -1,10 +1,10 @@
 {
   "name": "@oaoong/misty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "make component misty",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oaoong/misty.git"
+    "url": "https://github.com/oaoong/misty.git"
   },
   "keywords": [
     "react",
@@ -86,13 +86,12 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
     "url": "https://github.com/oaoong/misty/issues"
   },
   "readme": "ERROR: No README data found!",
   "homepage": "https://github.com/oaoong/misty#readme",
-  "_id": "@oaoong/misty@0.2.3"
+  "_id": "@oaoong/misty@1.0.1"
 }
